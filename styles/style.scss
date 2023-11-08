@@ -1,0 +1,184 @@
+/*Обнулення*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	max-width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*--------------------*/
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #db8c7b, #564b57);;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+}
+
+.clock {
+    // overflow: hidden;
+    position: relative;
+    margin: 200px 0px 0px 0px;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    box-shadow: #564b57;
+    background: url(../img/klipartz.com.png);
+    background-size: 600px 600px;
+    z-index: 1;
+}
+
+.clock > div {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    transform-origin: center;
+    z-index: 3;
+}
+.dot {
+    display: block;
+    top: 49%;
+    left: 48%;
+    position: absolute;
+    width: 20px; /* Задайте бажаний розмір крапки */
+    height: 20px;
+    background-color: #000000;
+    border-radius: 50%; /* Зробить крапку круглою */
+    z-index: 5; /* Встановіть вищий z-index, щоб крапка була наверху */
+}
+
+.dot::before {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff; /* Колір центральної точки крапки */
+    border-radius: 50%;
+    top: 50%; /* Розміщення центральної точки крапки по вертикалі */
+    left: 50%; /* Розміщення центральної точки крапки по горизонталі */
+    transform: translate(-50%, -50%); /* Центрування центральної точки */
+    z-index: 5; /* Встановіть ще вищий z-index, щоб центральна точка була наверху */
+}
+
+
+
+.clock > div::before {
+    margin: 0px 0px 0px 135px;
+    content: "";
+}
+
+
+.hour {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform-origin: center;
+    z-index: 1;
+}
+
+.hour::before{
+    position: relative;
+    left: 50%;
+    transform: translateX(-67.5%) rotate(-90deg);
+    position: absolute;
+    margin: 0px 0px 0px 135px;
+    content: "";
+    width: 200px;
+    height: 5px;
+    background-color: #ffffff;
+    transform-origin: 0;
+    z-index: 2;
+    border-radius: 0px 3px 3px 0px;
+}
+
+
+.minute {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform-origin: center;
+    z-index: 1;
+}
+
+.minute::before{
+    position: relative;
+    left: 50%;
+    transform: translateX(-54%) rotate(-90deg);
+    position: absolute;
+    margin: 0px 0px 0px 135px;
+    content: "";
+    width: 250px;
+    height: 5px;
+    background-color: #ffffff;
+    transform-origin: 0;
+    z-index: 3;
+    border-radius: 0px 3px 3px 0px;
+}
+
+.second {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform-origin: center;
+    z-index: 1;
+}
+
+.second::before{
+    left: 50%;
+    transform: translateX(-50%) rotate(-90deg);
+    position: absolute;
+    margin: 0px 0px 0px 135px;
+    content: "";
+    width: 270px;
+    height: 2px;
+    background-color: #ff0000;
+    transform-origin: 0;
+    z-index: 1;
+    border-radius: 0px 3px 3px 0px;
+}
+
